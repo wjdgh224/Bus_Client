@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEAM HKH</title>
+
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/bus.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/hmac-min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/sha256-min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.0/echarts.min.js"></script>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <div class="header">
+      <p id="name">TEAM HKH</p>
+      <div class="link">
+        <a href="/" id="user"> 승객 </a>
+        <a href="/admin" id="admin"> 관리자 </a>
+      </div>
+    </div>
+
+    <!-- 대시보드 -->
+    <div id="chart" style="width: 600px; height: 400px"></div>
+
+    <div class="data_box">
+      <span class="data">혼잡도</span>
+      <span class="data">인원수</span>
+    </div>
+
+    <div class="data_box">
+      <span class="data" id="temp">혼잡</span>
+      <span class="data">26</span>
+    </div>
+
+    <!-- 버스 버튼 -->
+    <div class="bus_box">
+      <a class="bus" href="/bus1" id="clicked">100-1</a>
+      <a class="bus" href="/bus2">111-1</a>
+      <a class="bus" href="/bus3">200</a>
+      <a class="bus" href="/bus4">77</a>
+    </div>
+
+    <script type="module" src="user.js"></script>
+    <script>
+      var chartDom = document.getElementById("chart");
+      var myChart = echarts.init(chartDom);
+      var option;
+
+      option = {
+        xAxis: {
+          type: "category",
+          data: ["12", "13", "14", "15", "16", "17", "18"],
+        },
+        yAxis: {
+          type: "value",
+        },
+        series: [
+          {
+            data: [10, 13, 8, 20, 18, 25, 26],
+            type: "line",
+          },
+        ],
+      };
+
+      option && myChart.setOption(option);
+    </script>
+  </body>
+</html>
