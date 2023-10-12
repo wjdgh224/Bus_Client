@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,9 +20,9 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <link rel="stylesheet" href="../css/header.css" />
-    <link rel="stylesheet" href="../css/video.css" />
-    <link rel="stylesheet" href="../css/bus.css" />
+    <link rel="stylesheet" href="../static/header.css" />
+    <link rel="stylesheet" href="../static/video.css" />
+    <link rel="stylesheet" href="../static/bus.css" />
   </head>
   <body>
     <!-- 헤더 -->
@@ -50,6 +51,10 @@
       </video>
     </div>
 
+    <div class="data_box">
+      <span class="data" id="add2">{{ text }}</span>
+    </div>
+
     <!-- 신고 버튼 -->
     <div class="alert_box">
       <button id="alert" onclick="clickEvent()">신고하기</button>
@@ -63,7 +68,8 @@
       <a class="bus" href="/admin/bus4">77</a>
     </div>
 
-    <script src="../js/video.js"></script>
-    <script src="../js/admin.js"></script>
+    <script src="../static/video.js"></script>
+    <script src="../static/admin.js"></script>
+    <script src="{% static 'add.js' %}"></script>
   </body>
 </html>
