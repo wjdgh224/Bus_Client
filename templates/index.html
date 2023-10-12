@@ -29,29 +29,30 @@
     </div>
 
     <!-- 대시보드 -->
-    <div></div>
-    <div class="data_box">
-      <span class="data">혼잡도</span>
-      <span class="data">인원수</span>
-    </div>
-
     <div class="container">
       <div class="row">
           <div class="col-10 mx-auto mt-5">
               <h1 id="hour">{{text}}</h1>
-              <h1 id="app">{{text}}</h1>
-              
-
-              <canvas id="myChart" width="400vw" height="400vh"></canvas>
-
+              <!-- <h1 id="app">{{text}}</h1> -->
+              <canvas id="myChart"></canvas>
           </div>
       </div>
+    </div>
+
+  <div class="data_box">
+    <span class="data">혼잡도</span>
+    <span class="data">인원수</span>
+  </div>
+
+  <div class="data_box">
+    <span class="data" id="value1">{{ text }}</span>
+    <span class="data" id="total1">{{ text }}</span>
   </div>
 
     <!-- 버스 버튼 -->
     <div class="bus_box">
       <a class="bus" href="/bus1">100-1</a>
-      <a class="bus" href="/bus2">111-1</a>
+      <a class="bus" href="/bus2" onclick="bus2">111-1</a>
       <a class="bus" href="/bus3">200</a>
       <a class="bus" href="/bus4">77</a>
     </div>
